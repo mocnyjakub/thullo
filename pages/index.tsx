@@ -1,7 +1,15 @@
+import LoginForm from '@/components/organisms/LoginForm';
+import Head from 'next/head';
+
 export default function Home() {
   return (
     <>
-      <h1 className="underline decoration-double ">cos</h1>
+      <Head>
+        <title>Login Page</title>
+      </Head>
+      <main>
+        <LoginForm />
+      </main>
     </>
   );
 }
