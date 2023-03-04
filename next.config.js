@@ -1,7 +1,10 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const { i18n } = require('./next-i18next.config');
+
 /** @type {import('next').NextConfig} */
-// https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600
 const nextConfig = {
   reactStrictMode: true,
+  i18n,
 };
 
 module.exports = nextConfig;

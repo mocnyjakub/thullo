@@ -1,15 +1,17 @@
 import LoginForm from '@/components/organisms/LoginForm';
 import Head from 'next/head';
 
-export default function Home() {
+const Home = () => {
   return (
     <>
       <Head>
-        <title>Login Page</title>
+        <title>Thullo - Log in</title>
       </Head>
       <main>
         <LoginForm />
       </main>
     </>
   );
-}
+};
+
+export default Home;

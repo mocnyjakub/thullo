@@ -1,21 +1,32 @@
 import { LockClosedIcon } from '@heroicons/react/20/solid';
+import { GetStaticProps } from 'next';
 import Image from 'next/image';
+import thulloLogo from 'public/images/thullo.svg';
+import { useTranslation } from 'next-i18next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...serverSideTranslations(locale, ['login', 'common']),
+    },
+  };
+};
 
 export default function LoginForm() {
+  const { t } = useTranslation();
   return (
     <>
       <div className="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
         <div className="w-full max-w-md space-y-8">
           <div>
             <Image
-              className="mx-auto h-12 w-auto"
-              src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+              className="mx-auto h-10 w-auto"
+              src={thulloLogo}
               alt="Thullo logo"
-              width={15}
-              height={15}
             />
             <h2 className="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">
-              Sign in to your account
+              {t('common:sign_in_account')}
             </h2>
             <p className="mt-2 text-center text-sm text-gray-600">
               Or{' '}
@@ -23,7 +34,7 @@ export default function LoginForm() {
                 href="#"
                 className="font-medium text-indigo-600 hover:text-indigo-500"
               >
-                start your 14-day free trial
+                Register a free account
               </a>
             </p>
           </div>
