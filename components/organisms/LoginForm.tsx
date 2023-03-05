@@ -1,17 +1,7 @@
 import { LockClosedIcon } from '@heroicons/react/20/solid';
-import { GetStaticProps } from 'next';
 import Image from 'next/image';
 import thulloLogo from 'public/images/thullo.svg';
 import { useTranslation } from 'next-i18next';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-
-export const getStaticProps: GetStaticProps = async ({ locale }) => {
-  return {
-    props: {
-      ...serverSideTranslations(locale, ['login', 'common']),
-    },
-  };
-};
 
 export default function LoginForm() {
   const { t } = useTranslation();
