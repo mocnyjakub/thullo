@@ -1,12 +1,13 @@
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import { appWithTranslation } from 'next-i18next';
+import Layout from '@/components/templates/Layout';
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
-    <div className="h-screen bg-gray-50">
+    <Layout>
       <Component {...pageProps} />
-    </div>
+    </Layout>
   );
 };
 

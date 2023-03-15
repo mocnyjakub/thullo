@@ -2,6 +2,7 @@ import { LockClosedIcon } from '@heroicons/react/20/solid';
 import Image from 'next/image';
 import thulloLogo from 'public/images/thullo.svg';
 import { useTranslation } from 'next-i18next';
+import Input from '../molecules/Input';
 
 export default function LoginForm() {
   const { t } = useTranslation();
@@ -36,6 +37,12 @@ export default function LoginForm() {
             />
             <div className="-space-y-px rounded-md shadow-sm">
               <div>
+                <Input
+                  label="Email address"
+                  name="email-address"
+                  placeholder="email-address"
+                  required
+                />
                 <label htmlFor="email-address" className="sr-only">
                   Email address
                 </label>
